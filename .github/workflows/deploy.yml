@@ -1,0 +1,74 @@
+# 部署工作流程：每次推送到 main 分支時，自動 build Vue 3 並發布到 gh-pages 分支
+# 設定完成後，請至 GitHub → Settings → Pages → Source 選擇 "Deploy from a branch"，
+# Branch 選 "gh-pages"，目錄選 "/ (root)"，儲存後即可啟用 GitHub Pages。
+
+name: Deploy to GitHub Pages
+
+# 觸發條件：僅在推送到 main 分支時執行
+on:
+  push:
+    branches:
+      - main
+
+# 避免多次快速推送造成同時部署競爭；後來的 push 會取消前一個尚未完成的 job
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+# 授予 GITHUB_TOKEN 寫入 Contents 的權限，讓 peaceiris/actions-gh-pages 能 push gh-pages 分支
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 步驟 1：取出原始碼
+      - name: 取出原始碼 (Checkout)
+        uses: actions/checkout@v4
+
+      # 步驟 2：安裝 Node.js 20（與本地開發環境一致）
+      - name: 設定 Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 步驟 3：安裝依賴（使用 ci 確保與 package-lock.json 完全一致，不升版）
+      - name: 安裝依賴 (npm ci)
+        run: npm ci
+
+      # 步驟 3.5：驗證 Secrets 是否已設定，避免無聲產出沒有 Supabase 連線的 bundle
+      # 若任一 secret 缺失，直接 fail 並提示，避免上線後白畫面
+      - name: 驗證必要環境變數
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          [ -n "$VITE_SUPABASE_URL" ] || { echo "::error::缺少 Secret: VITE_SUPABASE_URL — 請至 GitHub Settings → Secrets and variables → Actions 設定"; exit 1; }
+          [ -n "$VITE_SUPABASE_ANON_KEY" ] || { echo "::error::缺少 Secret: VITE_SUPABASE_ANON_KEY — 請至 GitHub Settings → Secrets and variables → Actions 設定"; exit 1; }
+          echo "Secrets OK"
+
+      # 步驟 4：執行 Vite build，產出 dist/ 目錄
+      # base 路徑已在 vite.config.js 設定為 /hushih/，無需額外參數
+      # 透過 env 把 Supabase 連線資訊注入 build；變數名需以 VITE_ 開頭才會被 Vite 編入前端 bundle
+      # 必須先在 GitHub repo Settings → Secrets and variables → Actions 設定下列 secrets：
+      #   - VITE_SUPABASE_URL
+      #   - VITE_SUPABASE_ANON_KEY
+      - name: 建置專案 (npm run build)
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+      # 步驟 5：將 dist/ 推送到 gh-pages 分支
+      # peaceiris/actions-gh-pages 會自動加上 .nojekyll（public/.nojekyll 也會被 Vite 複製進 dist/）
+      # publish_dir 指定要發布的目錄
+      - name: 部署到 gh-pages 分支
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # publish_branch 預設即為 gh-pages，此處明確寫出方便日後修改
+          publish_branch: gh-pages
