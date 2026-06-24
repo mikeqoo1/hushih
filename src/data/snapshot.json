@@ -1,0 +1,463 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-24T03:34:42.898Z",
+    "stamp": "20260624-113442",
+    "source": "https://zgelnyhzmwmfdgnbkthw.supabase.co",
+    "counts": {
+      "seasons": 1,
+      "session_groups": 2,
+      "sessions": 26,
+      "registrations": 36
+    },
+    "note": "前端 fallback 快照。雲端讀取失敗或資料被清空時，公開頁面（報名頁／名單頁）改用此資料唯讀顯示。由 scripts/backup.mjs 產生，需 commit 並重新部署才會生效。"
+  },
+  "tables": {
+    "seasons": [
+      {
+        "id": "082eabc1-00c3-4dee-96df-357a507dffa3",
+        "year": 2026,
+        "quarter": 3,
+        "start_month": 7,
+        "end_month": 9,
+        "is_active": true,
+        "created_at": "2026-05-13T02:33:51.811648+00:00"
+      }
+    ],
+    "session_groups": [
+      {
+        "id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "season_id": "082eabc1-00c3-4dee-96df-357a507dffa3",
+        "day_of_week": 1,
+        "venue": "南港區-胡適國小",
+        "time_slot": "19:00-21:30",
+        "fee_amount": 1100,
+        "max_players": 20,
+        "notes": null,
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "season_id": "082eabc1-00c3-4dee-96df-357a507dffa3",
+        "day_of_week": 4,
+        "venue": "南港區-胡適國小",
+        "time_slot": "19:00-21:30",
+        "fee_amount": 1100,
+        "max_players": 20,
+        "notes": null,
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      }
+    ],
+    "sessions": [
+      {
+        "id": "276a4f0a-7f8a-4be1-9ab4-d74a03a065cf",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-07-06",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "9d3ebb61-27d3-44e4-a4cd-b2f4a5b82210",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-07-13",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "ec4c4e76-ec4b-4d12-a95b-80845fc6dc8a",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-07-20",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "dddec2f2-c640-4dd9-b9fd-53d5cf11eadb",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-07-27",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "872793d4-248c-4f69-af08-c6fe1f191e68",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-08-03",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "241ab05e-13a9-4f3f-b8a5-11ddbe2dfd26",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-08-10",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "e807015c-3269-4d71-aaf6-eccf46382168",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-08-17",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "a6f6c2e2-6a41-44c6-9f07-e9d05172da81",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-08-24",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "c43f78e7-9984-4408-a836-0074955eb418",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-08-31",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "a5e40aad-766a-464d-9d0a-4f15a211b898",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-09-07",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "458b901f-5563-4e2f-a29d-9f36952d875c",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-09-14",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "9f7e0b59-11c9-4e88-bbbd-056a11b8e07d",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-09-21",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "5aef85a3-893b-4c07-b69e-bc3ef5276077",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "play_date": "2026-09-28",
+        "created_at": "2026-05-13T02:38:16.848467+00:00"
+      },
+      {
+        "id": "70da27d0-3f5d-4d51-9565-42b66e096c90",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-07-02",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "9aebee3e-4ed2-41cc-8c92-bb23a09da9b3",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-07-09",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "3f73ac6d-c516-41b8-b47c-6472940387f9",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-07-16",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "48da2e1e-55ba-4555-9561-b68eb9af5cba",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-07-23",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "6bd1f2d1-e9db-4ea4-a9b7-e3c032cc1ebf",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-07-30",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "f5fccb97-39df-420e-949f-bed249dedcbc",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-08-06",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "a3011f97-ff25-47fa-8e12-2b46809e8c13",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-08-13",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "f9c366ea-fadc-4c2f-b849-07288fb0b663",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-08-20",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "43413985-7731-4c13-a19d-e28487eb2944",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-08-27",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "ab914e0f-1b9e-4a93-9e54-fa736a72e658",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-09-03",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "74159f10-3893-4288-8759-5af52f4dfa95",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-09-10",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "adf0974c-be0c-4a7c-b31c-8bdd9bef8e63",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-09-17",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      },
+      {
+        "id": "3d066be5-5fb1-456e-addc-eaa3db9eee06",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "play_date": "2026-09-24",
+        "created_at": "2026-05-13T02:38:17.128172+00:00"
+      }
+    ],
+    "registrations": [
+      {
+        "id": "2af6b0bf-7133-4089-aa42-ce5c2aea1283",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維1",
+        "paid": false,
+        "created_at": "2026-05-13T02:53:29.89022+00:00"
+      },
+      {
+        "id": "5f6535f9-16b1-4390-bc2e-4a916802ec9d",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維2",
+        "paid": false,
+        "created_at": "2026-05-13T02:53:30.129767+00:00"
+      },
+      {
+        "id": "c7c6aa03-64e8-4374-9641-e2004824fba2",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維3",
+        "paid": false,
+        "created_at": "2026-05-13T02:53:30.383809+00:00"
+      },
+      {
+        "id": "64c10290-6fd5-4150-9833-f19b1f7a4695",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維4",
+        "paid": false,
+        "created_at": "2026-05-13T02:53:30.615073+00:00"
+      },
+      {
+        "id": "d9334a6f-78c8-4208-89b9-aaa8f2fc9da5",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維5",
+        "paid": false,
+        "created_at": "2026-05-13T02:53:30.818727+00:00"
+      },
+      {
+        "id": "e7b8e762-8795-4704-9463-8e3d82398ec6",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤1",
+        "paid": false,
+        "created_at": "2026-05-18T02:13:48.303398+00:00"
+      },
+      {
+        "id": "dfe61093-fbe0-406e-9fed-c20a5c85b902",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤2",
+        "paid": false,
+        "created_at": "2026-05-18T02:13:48.585814+00:00"
+      },
+      {
+        "id": "017101ab-dc65-4a0b-a337-608387764ea7",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源1",
+        "paid": false,
+        "created_at": "2026-05-27T12:25:54.982918+00:00"
+      },
+      {
+        "id": "1983304a-7eac-4e0b-8d66-4ae4f8222376",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源2",
+        "paid": false,
+        "created_at": "2026-05-27T12:25:55.177861+00:00"
+      },
+      {
+        "id": "26617660-ad10-49b6-a38a-fa61d6c2436c",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源3",
+        "paid": false,
+        "created_at": "2026-05-27T12:25:55.350522+00:00"
+      },
+      {
+        "id": "e70784a5-407b-448d-b139-91627030ed37",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源4",
+        "paid": false,
+        "created_at": "2026-05-27T12:25:55.528293+00:00"
+      },
+      {
+        "id": "577e9e20-8517-43e8-b0d7-49d1d3c0ff33",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源5",
+        "paid": false,
+        "created_at": "2026-05-27T12:25:55.69517+00:00"
+      },
+      {
+        "id": "46d6975d-a2a6-4d60-bb42-e87bd4113aad",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "快樂阿奎",
+        "paid": true,
+        "created_at": "2026-05-13T02:38:44.248681+00:00"
+      },
+      {
+        "id": "7b58f5b9-0316-4e8c-b8d0-f505e0039bcf",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "快樂阿奎",
+        "paid": true,
+        "created_at": "2026-05-13T02:38:44.448942+00:00"
+      },
+      {
+        "id": "90e972e4-f0c2-4594-9279-c50d25aa4def",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "FB-陳俊宏1",
+        "paid": true,
+        "created_at": "2026-05-29T13:18:03.154738+00:00"
+      },
+      {
+        "id": "51cf6c28-02a5-47dd-89ce-975ef1499eaa",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "FB-陳俊宏3",
+        "paid": true,
+        "created_at": "2026-05-29T13:18:03.466353+00:00"
+      },
+      {
+        "id": "f33cfbf0-86ee-4d23-8b31-10f6817973bb",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "FB-陳俊宏2",
+        "paid": true,
+        "created_at": "2026-05-29T13:18:03.313506+00:00"
+      },
+      {
+        "id": "e3f8c80e-77bd-4723-95c1-5dd12c758869",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "劉兆原",
+        "paid": true,
+        "created_at": "2026-05-13T03:37:54.387729+00:00"
+      },
+      {
+        "id": "6ef7cff2-e708-45b5-9249-70313509ea2b",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "FB-李昭儒1",
+        "paid": true,
+        "created_at": "2026-06-01T03:52:19.934827+00:00"
+      },
+      {
+        "id": "08dac9a4-db7e-4d15-a1db-c3ca13354309",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "FB-李昭儒2",
+        "paid": true,
+        "created_at": "2026-06-01T03:52:20.182719+00:00"
+      },
+      {
+        "id": "1f0361a2-7486-4acb-8826-a074624ec547",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "FB-李昭儒3",
+        "paid": true,
+        "created_at": "2026-06-01T03:52:20.411606+00:00"
+      },
+      {
+        "id": "89b3745a-e663-47a4-bb95-91234d2fe2c2",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "FB-李昭儒4",
+        "paid": true,
+        "created_at": "2026-06-01T03:52:20.63959+00:00"
+      },
+      {
+        "id": "f8b491dd-3dbb-4674-be7e-6d243a868f44",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "FB-李昭儒5",
+        "paid": true,
+        "created_at": "2026-06-01T03:52:20.871144+00:00"
+      },
+      {
+        "id": "65a05e2d-33d8-47a3-b8cb-9acecb2e6936",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "Mick",
+        "paid": true,
+        "created_at": "2026-05-13T02:53:49.444992+00:00"
+      },
+      {
+        "id": "e033d412-04c4-476f-a955-f5b9950542da",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "快樂阿源",
+        "paid": true,
+        "created_at": "2026-05-29T07:37:35.298447+00:00"
+      },
+      {
+        "id": "42678458-ac61-4ce0-8212-4d5fc77ec566",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "快樂阿賢",
+        "paid": true,
+        "created_at": "2026-05-29T07:37:52.248985+00:00"
+      },
+      {
+        "id": "934f5073-ecfc-4919-b316-5829ab559a01",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "快樂阿宇",
+        "paid": true,
+        "created_at": "2026-05-29T07:37:44.327902+00:00"
+      },
+      {
+        "id": "d158150d-d05c-4ecf-8b9e-10f5655eaad5",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "魯斯公司隊1",
+        "paid": true,
+        "created_at": "2026-05-13T03:36:41.679765+00:00"
+      },
+      {
+        "id": "ea2333ee-4ee4-450d-b4a7-fad99c8ee17d",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "魯斯公司隊2",
+        "paid": true,
+        "created_at": "2026-05-13T03:36:41.823646+00:00"
+      },
+      {
+        "id": "3417d3f5-0723-4b91-8cda-e5817a6c030f",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "魯斯公司隊3",
+        "paid": true,
+        "created_at": "2026-05-13T03:36:41.95918+00:00"
+      },
+      {
+        "id": "6449dfbf-ccf1-44b0-97ea-9db757428bdf",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "魯斯公司隊4",
+        "paid": true,
+        "created_at": "2026-05-13T03:36:42.096903+00:00"
+      },
+      {
+        "id": "91d1cb66-c8be-4062-b2d0-67e490bfcb22",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "魯斯公司隊5",
+        "paid": true,
+        "created_at": "2026-05-13T03:36:42.22992+00:00"
+      },
+      {
+        "id": "4568d353-2c86-4da6-bd1b-6a54f8f0804d",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤3",
+        "paid": false,
+        "created_at": "2026-06-02T08:06:12.702591+00:00"
+      },
+      {
+        "id": "027eafda-a79b-42a4-8a21-a76db4ee83a0",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤4",
+        "paid": false,
+        "created_at": "2026-06-02T08:06:28.539371+00:00"
+      },
+      {
+        "id": "a09ffacd-4b44-4188-82f0-864a229e22a6",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤5",
+        "paid": false,
+        "created_at": "2026-06-02T08:06:34.679878+00:00"
+      },
+      {
+        "id": "25d449c7-d662-4a6e-b448-ca94b5544754",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "🐻",
+        "paid": true,
+        "created_at": "2026-06-16T03:14:47.74757+00:00"
+      }
+    ]
+  }
+}

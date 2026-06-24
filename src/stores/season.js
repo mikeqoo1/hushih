@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { supabase } from '../lib/supabase.js'
+import { loadActiveSeasonBundle } from '../lib/publicData.js'
 
 export const useSeasonStore = defineStore('season', {
   state: () => ({
@@ -7,77 +7,47 @@ export const useSeasonStore = defineStore('season', {
     groups: [],
     loading: false,
     error: null,
+    // fallback 狀態：'live' = 即時雲端；'snapshot' = 雲端掛了改用備份快照（唯讀）
+    source: 'live',
+    // 當 source === 'snapshot' 時，備份產生的 ISO 時間（給畫面顯示日期用）
+    snapshotAt: null,
   }),
+
+  getters: {
+    // 是否正在用備份快照（畫面應顯示提示、停用報名）
+    usingFallback: (state) => state.source === 'snapshot',
+  },
 
   actions: {
     async loadActiveSeason() {
       this.loading = true
       this.error = null
       try {
-        // 1. 取得 is_active season
-        const { data: season, error: seasonErr } = await supabase
-          .from('seasons')
-          .select('*')
-          .eq('is_active', true)
-          .maybeSingle()
+        const bundle = await loadActiveSeasonBundle()
 
-        if (seasonErr) throw seasonErr
+        this.source = bundle.source
+        this.snapshotAt = bundle.source === 'snapshot' ? bundle.generatedAt : null
+        this.activeSeason = bundle.season
 
-        this.activeSeason = season
-
-        if (!season) {
+        if (!bundle.season) {
           this.groups = []
           return
         }
 
-        // 2. 取得該季所有 session_groups
-        const { data: groupsRaw, error: groupsErr } = await supabase
-          .from('session_groups')
-          .select('*')
-          .eq('season_id', season.id)
-          .order('day_of_week')
-          .order('time_slot')
-
-        if (groupsErr) throw groupsErr
-
-        if (!groupsRaw || groupsRaw.length === 0) {
-          this.groups = []
-          return
-        }
-
-        const groupIds = groupsRaw.map((g) => g.id)
-
-        // 3. 取得這些 groups 的 sessions
-        const { data: sessionsRaw, error: sessionsErr } = await supabase
-          .from('sessions')
-          .select('id, group_id, play_date')
-          .in('group_id', groupIds)
-          .order('play_date')
-
-        if (sessionsErr) throw sessionsErr
-
-        // 4. 取得這些 groups 的 registrations count
-        const { data: regsRaw, error: regsErr } = await supabase
-          .from('registrations')
-          .select('group_id')
-          .in('group_id', groupIds)
-
-        if (regsErr) throw regsErr
-
-        // 整理 sessions by group
+        // sessions by group
         const sessionsByGroup = {}
-        for (const s of sessionsRaw || []) {
+        for (const s of bundle.sessions) {
           if (!sessionsByGroup[s.group_id]) sessionsByGroup[s.group_id] = []
           sessionsByGroup[s.group_id].push({ id: s.id, play_date: s.play_date })
         }
 
-        // 計算每個 group 的報名人數
+        // 每個 group 的報名人數
         const countMap = {}
-        for (const reg of regsRaw || []) {
+        for (const reg of bundle.registrations) {
           countMap[reg.group_id] = (countMap[reg.group_id] || 0) + 1
         }
 
-        this.groups = groupsRaw.map((g) => ({
+        this.groups = bundle.groups.map((g) => ({
           ...g,
           sessions: sessionsByGroup[g.id] || [],
           registrations_count: countMap[g.id] || 0,
@@ -86,6 +56,8 @@ export const useSeasonStore = defineStore('season', {
         this.error = err.message || String(err)
         this.activeSeason = null
         this.groups = []
+        this.source = 'live'
+        this.snapshotAt = null
       } finally {
         this.loading = false
       }

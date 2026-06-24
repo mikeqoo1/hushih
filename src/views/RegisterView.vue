@@ -17,6 +17,15 @@
         </div>
       </div>
 
+      <!-- 備份模式提示：雲端掛了，目前顯示備份快照（唯讀） -->
+      <div
+        v-if="seasonStore.usingFallback"
+        class="bg-amber-50 border border-amber-300 rounded-lg px-4 py-3 mb-4 text-sm text-amber-800"
+      >
+        ⚠️ 目前顯示的是 <span class="font-semibold">{{ snapshotDateLabel() }}</span> 的備份資料（雲端暫時無法連線）。
+        資料僅供查看，<span class="font-semibold">報名功能暫停</span>，恢復後請重新整理。
+      </div>
+
       <!-- 載入中 -->
       <div v-if="seasonStore.loading" class="text-center py-12 text-gray-400">
         載入中…
@@ -226,7 +235,7 @@
                 : 'bg-gray-300 cursor-not-allowed'
             "
           >
-            {{ submitting ? '送出中…' : '送出報名' }}
+            {{ seasonStore.usingFallback ? '報名暫停（備份模式）' : submitting ? '送出中…' : '送出報名' }}
           </button>
         </div>
       </div>
@@ -238,6 +247,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useSeasonStore } from '../stores/season.js'
 import { useRegistrationStore } from '../stores/registration.js'
+import { snapshotDateLabel } from '../lib/publicData.js'
 
 const seasonStore = useSeasonStore()
 const registrationStore = useRegistrationStore()
@@ -326,6 +336,7 @@ const totalFee = computed(() => {
 })
 
 const canSubmit = computed(() => {
+  if (seasonStore.usingFallback) return false // 備份模式：唯讀，不能報名
   if (selectedGroupIds.value.length === 0) return false
   if (mode.value === 'individual') {
     return playerName.value.trim().length > 0
@@ -340,6 +351,10 @@ const canSubmit = computed(() => {
 
 async function handleSubmit() {
   if (!canSubmit.value || submitting.value) return
+  if (seasonStore.usingFallback) {
+    addToast('目前是備份模式，雲端恢復後才能報名', 'error')
+    return
+  }
   submitting.value = true
 
   const names = mode.value === 'team' ? teamMembers.value : [playerName.value.trim()]

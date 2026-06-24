@@ -3,6 +3,15 @@
     <div class="max-w-md mx-auto">
       <h1 class="text-xl font-bold text-gray-800 mb-5">當季報名狀態</h1>
 
+      <!-- 備份模式提示：雲端掛了，目前顯示備份快照（唯讀） -->
+      <div
+        v-if="usingFallback"
+        class="bg-amber-50 border border-amber-300 rounded-lg px-4 py-3 mb-4 text-sm text-amber-800"
+      >
+        ⚠️ 目前顯示的是 <span class="font-semibold">{{ snapshotDateLabel() }}</span> 的備份資料（雲端暫時無法連線）。
+        名單僅供查看，<span class="font-semibold">取消功能暫停</span>，恢復後請重新整理。
+      </div>
+
       <!-- 載入中 -->
       <div v-if="overviewLoading" class="text-center py-12 text-gray-400">載入中…</div>
 
@@ -91,8 +100,8 @@
           </div>
         </div>
 
-        <!-- 我要取消我的報名 -->
-        <details class="bg-white rounded-xl shadow px-4 py-3 mb-4">
+        <!-- 我要取消我的報名（備份模式下停用） -->
+        <details v-if="!usingFallback" class="bg-white rounded-xl shadow px-4 py-3 mb-4">
           <summary class="text-sm font-medium text-gray-700 cursor-pointer select-none">
             我要取消我的報名
           </summary>
@@ -187,8 +196,8 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { supabase } from '../lib/supabase.js'
 import { useRegistrationStore } from '../stores/registration.js'
+import { loadActiveSeasonBundle, snapshotDateLabel } from '../lib/publicData.js'
 
 const registrationStore = useRegistrationStore()
 
@@ -197,6 +206,8 @@ const overviewLoading = ref(true)
 const overviewError = ref('')
 const activeSeason = ref(null)
 const overview = ref([]) // [{ group, sessions, registrations }]
+const dataSource = ref('live') // 'live' | 'snapshot'
+const usingFallback = computed(() => dataSource.value === 'snapshot')
 
 // --- Cancel section state ---
 const queryName = ref('')
@@ -227,58 +238,26 @@ async function loadOverview() {
   overviewLoading.value = true
   overviewError.value = ''
   try {
-    const { data: season, error: seasonErr } = await supabase
-      .from('seasons')
-      .select('*')
-      .eq('is_active', true)
-      .maybeSingle()
-    if (seasonErr) throw seasonErr
-    activeSeason.value = season
-    if (!season) {
+    // 走共用資料源：雲端優先，掛了自動 fallback 到備份快照
+    const bundle = await loadActiveSeasonBundle()
+    dataSource.value = bundle.source
+    activeSeason.value = bundle.season
+    if (!bundle.season) {
       overview.value = []
       return
     }
-
-    const { data: groups, error: gErr } = await supabase
-      .from('session_groups')
-      .select('*')
-      .eq('season_id', season.id)
-      .order('day_of_week')
-      .order('time_slot')
-    if (gErr) throw gErr
-
-    const groupIds = (groups || []).map((g) => g.id)
-    if (groupIds.length === 0) {
-      overview.value = []
-      return
-    }
-
-    const [{ data: sessions, error: sErr }, { data: regs, error: rErr }] = await Promise.all([
-      supabase
-        .from('sessions')
-        .select('id, group_id, play_date')
-        .in('group_id', groupIds)
-        .order('play_date'),
-      supabase
-        .from('registrations')
-        .select('*')
-        .in('group_id', groupIds)
-        .order('created_at'),
-    ])
-    if (sErr) throw sErr
-    if (rErr) throw rErr
 
     const sessionsByGroup = {}
-    for (const s of sessions || []) {
+    for (const s of bundle.sessions) {
       if (!sessionsByGroup[s.group_id]) sessionsByGroup[s.group_id] = []
       sessionsByGroup[s.group_id].push(s)
     }
     const regsByGroup = {}
-    for (const r of regs || []) {
+    for (const r of bundle.registrations) {
       if (!regsByGroup[r.group_id]) regsByGroup[r.group_id] = []
       regsByGroup[r.group_id].push(r)
     }
-    overview.value = (groups || []).map((g) => ({
+    overview.value = bundle.groups.map((g) => ({
       group: g,
       sessions: sessionsByGroup[g.id] || [],
       registrations: regsByGroup[g.id] || [],

@@ -72,6 +72,37 @@ npm run build
 
 ---
 
+## 備份 & 雲端掛掉時的 fallback
+
+系統有兩層防護，避免「Supabase 被清空或連不上」時公開頁面變空白：
+
+### 一鍵備份
+
+```bash
+npm run backup
+```
+
+會一次產出：
+
+| 產出 | 路徑 | 用途 |
+|---|---|---|
+| 雲端原始 dump + 重灌 SQL | `backup/<timestamp>/`（並更新 `backup/latest`） | **伺服器端還原**：依 `RESTORE.md` 把資料灌回任一 Supabase / Postgres |
+| 前端 fallback 快照 | `src/data/snapshot.json` | **前端撐場**：打包進網站，雲端掛掉時頁面改用這份顯示 |
+
+> 快照含報名名單等資料，會 commit 進 repo。**改完要 commit + push 到 `main`，CI 重新 build 才會把最新快照帶上線。**
+
+### 前端 fallback 行為（`src/lib/publicData.js`）
+
+報名頁（`/`）與名單頁（`/status`）讀資料時：
+
+- **正常**：讀 Supabase 即時資料。
+- **雲端報錯 / 逾時（>5 秒沒回應）/ seasons 表整個被清空** → 自動改用 `snapshot.json`，頁面頂端顯示「目前顯示的是 YYYY/MM/DD 的備份資料」橫幅，並**停用報名 / 取消**（唯讀，避免對死掉的 DB 寫入）。
+- **有季但目前沒有開放中的季** → 視為正常的「季與季之間」，照常顯示空狀態，**不**套用過期快照。
+
+> 注意：fallback 是「唯讀撐場」，不是即時同步。它顯示的是「最後一次 `npm run backup` 的資料」，所以重要異動後記得重跑備份。
+
+---
+
 ## 修改後台密碼
 
 到 Supabase SQL Editor，執行（把 `old_password` 與 `new_password` 換成實際值）：
