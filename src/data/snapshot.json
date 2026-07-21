@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-06-24T03:34:42.898Z",
-    "stamp": "20260624-113442",
+    "generatedAt": "2026-07-21T02:21:46.797Z",
+    "stamp": "20260721-102146",
     "source": "https://zgelnyhzmwmfdgnbkthw.supabase.co",
     "counts": {
       "seasons": 1,
@@ -207,88 +207,39 @@
     ],
     "registrations": [
       {
-        "id": "2af6b0bf-7133-4089-aa42-ce5c2aea1283",
+        "id": "027eafda-a79b-42a4-8a21-a76db4ee83a0",
         "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "修維1",
-        "paid": false,
-        "created_at": "2026-05-13T02:53:29.89022+00:00"
+        "player_name": "謝菘澤4",
+        "paid": true,
+        "created_at": "2026-06-02T08:06:28.539371+00:00"
       },
       {
-        "id": "5f6535f9-16b1-4390-bc2e-4a916802ec9d",
+        "id": "a09ffacd-4b44-4188-82f0-864a229e22a6",
         "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "修維2",
-        "paid": false,
-        "created_at": "2026-05-13T02:53:30.129767+00:00"
+        "player_name": "謝菘澤5",
+        "paid": true,
+        "created_at": "2026-06-02T08:06:34.679878+00:00"
       },
       {
-        "id": "c7c6aa03-64e8-4374-9641-e2004824fba2",
+        "id": "416fa33b-b00f-4add-ab67-a4acdbe23968",
         "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "修維3",
-        "paid": false,
-        "created_at": "2026-05-13T02:53:30.383809+00:00"
+        "player_name": "蔡哥",
+        "paid": true,
+        "created_at": "2026-07-21T02:19:59.673978+00:00"
+      },
+      {
+        "id": "e033d412-04c4-476f-a955-f5b9950542da",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "Young",
+        "paid": true,
+        "created_at": "2026-05-29T07:37:35.298447+00:00"
       },
       {
         "id": "64c10290-6fd5-4150-9833-f19b1f7a4695",
         "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
         "player_name": "修維4",
-        "paid": false,
+        "paid": true,
         "created_at": "2026-05-13T02:53:30.615073+00:00"
-      },
-      {
-        "id": "d9334a6f-78c8-4208-89b9-aaa8f2fc9da5",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "修維5",
-        "paid": false,
-        "created_at": "2026-05-13T02:53:30.818727+00:00"
-      },
-      {
-        "id": "e7b8e762-8795-4704-9463-8e3d82398ec6",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "謝菘澤1",
-        "paid": false,
-        "created_at": "2026-05-18T02:13:48.303398+00:00"
-      },
-      {
-        "id": "dfe61093-fbe0-406e-9fed-c20a5c85b902",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "謝菘澤2",
-        "paid": false,
-        "created_at": "2026-05-18T02:13:48.585814+00:00"
-      },
-      {
-        "id": "017101ab-dc65-4a0b-a337-608387764ea7",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "鵝肉榮阿源1",
-        "paid": false,
-        "created_at": "2026-05-27T12:25:54.982918+00:00"
-      },
-      {
-        "id": "1983304a-7eac-4e0b-8d66-4ae4f8222376",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "鵝肉榮阿源2",
-        "paid": false,
-        "created_at": "2026-05-27T12:25:55.177861+00:00"
-      },
-      {
-        "id": "26617660-ad10-49b6-a38a-fa61d6c2436c",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "鵝肉榮阿源3",
-        "paid": false,
-        "created_at": "2026-05-27T12:25:55.350522+00:00"
-      },
-      {
-        "id": "e70784a5-407b-448d-b139-91627030ed37",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "鵝肉榮阿源4",
-        "paid": false,
-        "created_at": "2026-05-27T12:25:55.528293+00:00"
-      },
-      {
-        "id": "577e9e20-8517-43e8-b0d7-49d1d3c0ff33",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "鵝肉榮阿源5",
-        "paid": false,
-        "created_at": "2026-05-27T12:25:55.69517+00:00"
       },
       {
         "id": "46d6975d-a2a6-4d60-bb42-e87bd4113aad",
@@ -375,20 +326,6 @@
         "created_at": "2026-05-13T02:53:49.444992+00:00"
       },
       {
-        "id": "e033d412-04c4-476f-a955-f5b9950542da",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "快樂阿源",
-        "paid": true,
-        "created_at": "2026-05-29T07:37:35.298447+00:00"
-      },
-      {
-        "id": "42678458-ac61-4ce0-8212-4d5fc77ec566",
-        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
-        "player_name": "快樂阿賢",
-        "paid": true,
-        "created_at": "2026-05-29T07:37:52.248985+00:00"
-      },
-      {
         "id": "934f5073-ecfc-4919-b316-5829ab559a01",
         "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
         "player_name": "快樂阿宇",
@@ -431,32 +368,95 @@
         "created_at": "2026-05-13T03:36:42.22992+00:00"
       },
       {
-        "id": "4568d353-2c86-4da6-bd1b-6a54f8f0804d",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "謝菘澤3",
-        "paid": false,
-        "created_at": "2026-06-02T08:06:12.702591+00:00"
-      },
-      {
-        "id": "027eafda-a79b-42a4-8a21-a76db4ee83a0",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "謝菘澤4",
-        "paid": false,
-        "created_at": "2026-06-02T08:06:28.539371+00:00"
-      },
-      {
-        "id": "a09ffacd-4b44-4188-82f0-864a229e22a6",
-        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
-        "player_name": "謝菘澤5",
-        "paid": false,
-        "created_at": "2026-06-02T08:06:34.679878+00:00"
-      },
-      {
         "id": "25d449c7-d662-4a6e-b448-ca94b5544754",
         "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
         "player_name": "🐻",
         "paid": true,
         "created_at": "2026-06-16T03:14:47.74757+00:00"
+      },
+      {
+        "id": "017101ab-dc65-4a0b-a337-608387764ea7",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源1",
+        "paid": true,
+        "created_at": "2026-05-27T12:25:54.982918+00:00"
+      },
+      {
+        "id": "1983304a-7eac-4e0b-8d66-4ae4f8222376",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源2",
+        "paid": true,
+        "created_at": "2026-05-27T12:25:55.177861+00:00"
+      },
+      {
+        "id": "26617660-ad10-49b6-a38a-fa61d6c2436c",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源3",
+        "paid": true,
+        "created_at": "2026-05-27T12:25:55.350522+00:00"
+      },
+      {
+        "id": "e70784a5-407b-448d-b139-91627030ed37",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源4",
+        "paid": true,
+        "created_at": "2026-05-27T12:25:55.528293+00:00"
+      },
+      {
+        "id": "577e9e20-8517-43e8-b0d7-49d1d3c0ff33",
+        "group_id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+        "player_name": "鵝肉榮阿源5",
+        "paid": true,
+        "created_at": "2026-05-27T12:25:55.69517+00:00"
+      },
+      {
+        "id": "a3c7bea1-5df3-4f32-9121-db6c5f42691f",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "快樂阿賢",
+        "paid": true,
+        "created_at": "2026-07-03T07:05:10.277384+00:00"
+      },
+      {
+        "id": "2af6b0bf-7133-4089-aa42-ce5c2aea1283",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維1",
+        "paid": true,
+        "created_at": "2026-05-13T02:53:29.89022+00:00"
+      },
+      {
+        "id": "5f6535f9-16b1-4390-bc2e-4a916802ec9d",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維2",
+        "paid": true,
+        "created_at": "2026-05-13T02:53:30.129767+00:00"
+      },
+      {
+        "id": "c7c6aa03-64e8-4374-9641-e2004824fba2",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "修維3",
+        "paid": true,
+        "created_at": "2026-05-13T02:53:30.383809+00:00"
+      },
+      {
+        "id": "e7b8e762-8795-4704-9463-8e3d82398ec6",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤1",
+        "paid": true,
+        "created_at": "2026-05-18T02:13:48.303398+00:00"
+      },
+      {
+        "id": "dfe61093-fbe0-406e-9fed-c20a5c85b902",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤2",
+        "paid": true,
+        "created_at": "2026-05-18T02:13:48.585814+00:00"
+      },
+      {
+        "id": "4568d353-2c86-4da6-bd1b-6a54f8f0804d",
+        "group_id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+        "player_name": "謝菘澤3",
+        "paid": true,
+        "created_at": "2026-06-02T08:06:12.702591+00:00"
       }
     ]
   }
