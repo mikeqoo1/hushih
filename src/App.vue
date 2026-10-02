@@ -19,6 +19,13 @@
           查詢
         </router-link>
         <router-link
+          to="/notice"
+          class="hover:text-orange-100 transition-colors"
+          active-class="underline font-semibold"
+        >
+          說明
+        </router-link>
+        <router-link
           to="/admin"
           class="ml-auto hover:text-orange-100 transition-colors"
           active-class="underline font-semibold"
