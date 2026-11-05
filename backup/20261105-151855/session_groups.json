@@ -1,0 +1,35 @@
+[
+  {
+    "id": "549a21f2-e213-48fc-a8c0-2f9cab9afaf8",
+    "season_id": "082eabc1-00c3-4dee-96df-357a507dffa3",
+    "day_of_week": 1,
+    "venue": "南港區-胡適國小",
+    "time_slot": "19:00-21:30",
+    "fee_amount": 1100,
+    "max_players": 20,
+    "notes": null,
+    "created_at": "2026-05-13T02:38:16.848467+00:00"
+  },
+  {
+    "id": "abcb5c91-5f28-4ade-ac21-ea9cfef9d026",
+    "season_id": "082eabc1-00c3-4dee-96df-357a507dffa3",
+    "day_of_week": 4,
+    "venue": "南港區-胡適國小",
+    "time_slot": "19:00-21:30",
+    "fee_amount": 1100,
+    "max_players": 20,
+    "notes": null,
+    "created_at": "2026-05-13T02:38:17.128172+00:00"
+  },
+  {
+    "id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+    "season_id": "4dabef4b-b5da-43d8-85a0-841de5f73749",
+    "day_of_week": 4,
+    "venue": "南港區-成德國中運動中心",
+    "time_slot": "20:00-22:00",
+    "fee_amount": 2200,
+    "max_players": 20,
+    "notes": "場地費每次 4,000 元；2/4 小年夜停打",
+    "created_at": "2026-11-05T07:17:05.54402+00:00"
+  }
+]
