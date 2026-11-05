@@ -25,9 +25,9 @@
           <span class="font-semibold text-green-600">抽到了！</span>
         </p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>1～3 月共 <span class="font-semibold">11 次</span>（2/4 小年夜停打），日期看「報名」頁。</li>
-          <li>場地費每次 4,000 元（每小時 2,000 元），一季 44,000 元。</li>
-          <li>季繳<span class="font-semibold">每人 2,200 元</span>，上限 20 人，請到「報名」頁登記。</li>
+          <li>1～3 月共 <span class="font-semibold">12 次</span>（春節照常開放，不停打），日期看「報名」頁。</li>
+          <li>場地費每次 4,000 元（每小時 2,000 元），一季 48,000 元。</li>
+          <li>季繳<span class="font-semibold">每人 2,400 元</span>，上限 20 人，請到「報名」頁登記。</li>
         </ul>
         <p>這個場地是<span class="font-semibold">年租、季繳</span>：抽到就有一整年的使用資格，但費用一季一季繳。</p>
         <p><span class="font-semibold">星期一</span>胡適國小要等 11 月抽籤結果，抽到再開放報名。</p>
