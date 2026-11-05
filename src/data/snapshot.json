@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generatedAt": "2026-11-05T07:18:55.684Z",
-    "stamp": "20261105-151855",
+    "generatedAt": "2026-11-05T09:06:42.608Z",
+    "stamp": "20261105-170642",
     "source": "https://zgelnyhzmwmfdgnbkthw.supabase.co",
     "counts": {
       "seasons": 2,
       "session_groups": 3,
-      "sessions": 37,
-      "registrations": 36
+      "sessions": 38,
+      "registrations": 37
     },
     "note": "前端 fallback 快照。雲端讀取失敗或資料被清空時，公開頁面（報名頁／名單頁）改用此資料唯讀顯示。由 scripts/backup.mjs 產生，需 commit 並重新部署才會生效。"
   },
@@ -56,15 +56,15 @@
         "created_at": "2026-05-13T02:38:17.128172+00:00"
       },
       {
-        "id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "season_id": "4dabef4b-b5da-43d8-85a0-841de5f73749",
         "day_of_week": 4,
         "venue": "南港區-成德國中運動中心",
         "time_slot": "20:00-22:00",
-        "fee_amount": 2200,
+        "fee_amount": 2400,
         "max_players": 20,
-        "notes": "場地費每次 4,000 元；2/4 小年夜停打",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "notes": "場地費每次 4,000 元；春節照常開放",
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       }
     ],
     "sessions": [
@@ -225,70 +225,76 @@
         "created_at": "2026-05-13T02:38:17.128172+00:00"
       },
       {
-        "id": "88c220c4-b02f-4fcc-9e4f-77ef34a64217",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "ccd7afcc-2e6b-4804-84da-13e9dd506b8e",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-01-07",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "263de3ea-2a8a-4bbc-8ffc-a92bce733531",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "89e33245-69bc-49ef-95b8-184f056731b5",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-01-14",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "27773040-44e5-4ad7-a4cd-34bfe9ff8254",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "f37aa968-7acc-42ea-9a80-f03befb5df45",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-01-21",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "c82b18a2-fce9-4a7f-92ac-895f3baaa0ad",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "1b3a7205-1a2c-438c-b2ee-44efc9974e09",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-01-28",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "015d1d2f-3ac4-4f4a-8c14-f26f3a24b6a8",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "2af9a27f-fd7e-49bc-9b4c-dc630d287c23",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
+        "play_date": "2027-02-04",
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
+      },
+      {
+        "id": "f4d73be6-688f-4105-ae94-bb4bcab88f14",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-02-11",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "f3fa9682-6388-4504-abc5-4711ba7e4e66",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "dbbe7bec-0ccf-4fff-af6e-d51abeb86e5d",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-02-18",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "24b4f4a5-1a68-486b-8787-8808e0765bfb",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "94a30a3b-27eb-463e-9d2e-c6401557bd72",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-02-25",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "cd27a686-2b24-475d-b8a1-0d85e45fb9bf",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "e8dadea8-5402-4111-872d-94c5b6e33ae6",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-03-04",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "7a71feb6-9952-4c8e-89fe-101536a4ce17",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "8b85345c-56c7-45e4-8378-ec9214c1c30a",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-03-11",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "8508d0cc-71cd-4f54-b40f-c8f7d306975f",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "d8b47177-a2ac-4e69-aac8-83b1aa5529f2",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-03-18",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       },
       {
-        "id": "ccecf7d2-7770-4675-8ba2-2e90345ef2a9",
-        "group_id": "42b052df-b256-432f-83a9-a24d2dce72e7",
+        "id": "135ba479-fa59-4fe6-b318-cd604b0b4ff5",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
         "play_date": "2027-03-25",
-        "created_at": "2026-11-05T07:17:05.54402+00:00"
+        "created_at": "2026-11-05T09:06:19.560123+00:00"
       }
     ],
     "registrations": [
@@ -410,6 +416,13 @@
         "player_name": "Mick",
         "paid": true,
         "created_at": "2026-05-13T02:53:49.444992+00:00"
+      },
+      {
+        "id": "e147efbf-cec3-496b-99f7-6ab4025f95ba",
+        "group_id": "a8dfd5bc-3265-4947-a835-cce29227997b",
+        "player_name": "快樂阿奎",
+        "paid": false,
+        "created_at": "2026-11-05T08:16:25.524485+00:00"
       },
       {
         "id": "934f5073-ecfc-4919-b316-5829ab559a01",
