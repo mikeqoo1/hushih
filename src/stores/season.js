@@ -41,16 +41,19 @@ export const useSeasonStore = defineStore('season', {
           sessionsByGroup[s.group_id].push({ id: s.id, play_date: s.play_date })
         }
 
-        // 每個 group 的報名人數
+        // 每個 group 的報名人數、尚未繳費的名字
         const countMap = {}
+        const unpaidMap = {}
         for (const reg of bundle.registrations) {
           countMap[reg.group_id] = (countMap[reg.group_id] || 0) + 1
+          if (!reg.paid) (unpaidMap[reg.group_id] ||= []).push(reg.player_name)
         }
 
         this.groups = bundle.groups.map((g) => ({
           ...g,
           sessions: sessionsByGroup[g.id] || [],
           registrations_count: countMap[g.id] || 0,
+          unpaid_names: unpaidMap[g.id] || [],
         }))
       } catch (err) {
         this.error = err.message || String(err)

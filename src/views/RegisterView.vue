@@ -118,6 +118,9 @@
                     已額滿
                   </span>
                 </div>
+                <p v-if="group.unpaid_names.length > 0" class="text-xs text-red-600 mt-1">
+                  尚未繳費（{{ group.unpaid_names.length }} 人）：{{ group.unpaid_names.join('、') }}
+                </p>
               </div>
             </div>
           </div>
